@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mustafa's Portfolio</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Add a header element -->
+    <header>
+      <h1>Welcome to My Portfolio</h1>
+    </header>
+
+    <!-- Add three section elements with different background images or colors -->
+    <section id="section1">
+      <h2>Section 1</h2>
+    </section>
+    <section id="section2">
+      <h2>Section 2</h2>
+    </section>
+    <section id="section3">
+      <h2>Section 3</h2>
+    </section>
+
+    <!-- Add a footer element -->
+    <footer>
+      <p>Copyright © 2023 - All rights Reserved - Designed by Mustafa</p>
+    </footer>
+
+    <!-- Add the JavaScript for the parallax effect -->
+    <script>
+      // Get the section elements
+      var sections = document.querySelectorAll("section");
+
+      // Add an event listener to the window object to listen for scroll events
+      window.addEventListener("scroll", function () {
+        // Loop through the sections
+        for (var i = 0; i < sections.length; i++) {
+          // Get the position of the section
+          var position = sections[i].getBoundingClientRect();
+          // Check if the section is in the viewport
+          if (position.top >= 0 && position.bottom <= window.innerHeight) {
+            // Set the background position of the section to create the parallax effect
+            sections[i].style.backgroundPosition =
+              "center " + -position.top * 0.5 + "px";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

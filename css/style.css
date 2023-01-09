@@ -1,0 +1,48 @@
+/* Add some style to the body element */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fafafa;
+  margin: 0;
+}
+
+/* Style the header */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the section elements */
+section {
+  height: 500px; /* Set the height of the section to create the parallax effect */
+}
+
+/* Style the first section */
+#section1 {
+  background-image: url("images/bg1.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+/* Style the second section */
+#section2 {
+  background-color: #f1f1f1;
+  color: #333;
+  padding: 20px;
+}
+
+/* Style the third section */
+#section3 {
+  background-image: url("image2.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+/* Style the footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
