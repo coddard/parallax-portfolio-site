@@ -8,20 +8,50 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- Add a header element -->
-    <header>
-      <h1>Welcome to My Portfolio</h1>
-    </header>
+    <!-- Add a nav element -->
+    <nav>
+      <ul>
+        <li><a href="#HOME">ANASAYFA</a></li>
+        <li><a href="#ABOUT">HAKKIMDA</a></li>
+        <li><a href="#PORTFOLIO">PORTFOLYO</a></li>
+        <li><a href="#CONTACT">İLETİŞİM</a></li>
+      </ul>
+    </nav>
 
     <!-- Add three section elements with different background images or colors -->
-    <section id="section1">
-      <h2>Section 1</h2>
+    <div class="Parallax bg1"></div>
+    <section id="HOME">
+      <p>Burası Ana Sayfadir ve hazirlik aşamasındadır.</p>
     </section>
-    <section id="section2">
-      <h2>Section 2</h2>
+    <div class="Parallax bg2"></div>
+    <section id="ABOUT">
+      <p>Burası Hakkımızda sayfasıdır ve hazirlik aşamasındadır.</p>
     </section>
-    <section id="section3">
-      <h2>Section 3</h2>
+    <div class="Parallax bg3"></div>
+    <section id="PORTFOLIO">
+      <p>Burası Galeri sayfasıdır ve hazirlik aşamasındadır.</p>
+    </section>
+    <div class="Parallax bg4"></div>
+    <section id="CONTACT">
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" /><br />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" /><br />
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea><br />
+        <input type="submit" value="Send" />
+      </form>
+
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3014.2449209412325!2d29.2130639!3d40.9322991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1dfef1386ea6cac9!2s%C4%B0smek%20Kartal%20U%C4%9Furmumcu!5e0!3m2!1str!2str!4v1673379438664!5m2!1str!2str"
+        width="400"
+        height="300"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
     </section>
 
     <!-- Add a footer element -->
@@ -30,24 +60,44 @@
     </footer>
 
     <!-- Add the JavaScript for the parallax effect -->
-    <script>
-      // Get the section elements
-      var sections = document.querySelectorAll("section");
+    <style>
+      #onlyJSyc {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 9999;
 
-      // Add an event listener to the window object to listen for scroll events
-      window.addEventListener("scroll", function () {
-        // Loop through the sections
-        for (var i = 0; i < sections.length; i++) {
-          // Get the position of the section
-          var position = sections[i].getBoundingClientRect();
-          // Check if the section is in the viewport
-          if (position.top >= 0 && position.bottom <= window.innerHeight) {
-            // Set the background position of the section to create the parallax effect
-            sections[i].style.backgroundPosition =
-              "center " + -position.top * 0.5 + "px";
-          }
+        border: none;
+        outline: none;
+        background: url(../images/up.png) no-repeat;
+        cursor: pointer;
+        padding: 0px;
+        width: 40px;
+        height: 40px;
+      }
+    </style>
+
+    <button onclick="topFunction()" id="onlyJSyc"></button>
+    <script>
+      window.onscroll = function () {
+        document.getElementById("onlyJSyc").style.display = "block";
+      };
+      function topFunction() {
+        if (
+          document.body.scrollTop > 0 ||
+          document.documentElement.scrollTop > 0
+        ) {
+          document.body.scrollTop -= 40;
+          document.documentElement.scrollTop -= 40;
+          setTimeout(function () {
+            topFunction();
+          }, 0);
+        } else {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
         }
-      });
+      }
     </script>
   </body>
 </html>
